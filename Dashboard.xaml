@@ -1,0 +1,63 @@
+<Window x:Class="BankingSystemGui.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dashboard" Height="450" Width="700"
+        Background="#002D3C" FontFamily="Georgia" Foreground="White">
+    <Grid Margin="20">
+        <!-- Define grid structure -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>   <!-- Header -->
+            <RowDefinition Height="Auto"/>   <!-- Balance -->
+            <RowDefinition Height="Auto"/>   <!-- Buttons -->
+            <RowDefinition Height="*"/>      <!-- Activity list -->
+        </Grid.RowDefinitions>
+        <Button Content="Logout"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,0,0,10"
+            Width="80"
+            Click="LogoutButton_Click"/>
+
+        <!-- Welcome Text -->
+        <TextBlock Name="WelcomeText"
+                   Grid.Row="0"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"
+                   HorizontalAlignment="Center"/>
+
+        <!-- Balance -->
+        <TextBlock Name="BalanceText"
+                   Grid.Row="1"
+                   FontSize="22"
+                   Margin="0,0,0,20"
+                   HorizontalAlignment="Center"/>
+
+        <!-- Action Buttons -->
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,20">
+            <Button Content="Deposit"
+                    Width="100"
+                    Margin="10"
+                    Click="DepositButton_Click"/>
+            <Button Content="Withdraw"
+                    Width="100"
+                    Margin="10"
+                    Click="WidthrawButton_Click"/>
+        </StackPanel>
+
+        <!-- Recent Activity Section -->
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="Recent Activity"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+            <ListBox Name="ActivityList"
+                     Height="200"
+                     Background="White"
+                     Foreground="Black"/>
+        </StackPanel>
+    </Grid>
+</Window>
